@@ -1,7 +1,8 @@
+import sys
 from random import choice
 from cards import Agent, Monster, Elixir, Gold, Sword
 
-AVAILABLE_CARDS = [Monster, Elixir, Gold, Sword]
+AVAILABLE_CARDS = [Monster,Monster, Elixir, Gold, Sword]
 
 
 class Board:
@@ -25,6 +26,7 @@ class Board:
         cards = self.board[card_position[1]][card_position[0]].interaction(agent)
         if cards[1] is None:
             print("You died")
+            sys.exit()
 
         elif cards[0] is None:
             self.board[card_position[1]][card_position[0]] = cards[1]
