@@ -42,9 +42,9 @@ class Board:
     def __is_available_move(self, direction):
         dir_conditions = {
             "up": self.agent_position[1] > 0,
-            "down": self.agent_position[1] < self.height,
+            "down": self.agent_position[1] < self.height-1,
             "left": self.agent_position[0] > 0,
-            "right": self.agent_position[0] < self.width
+            "right": self.agent_position[0] < self.width-1
         }
         return dir_conditions[direction]
 
